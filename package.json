@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "nodemon --exec 'tsx' ./server/index.ts -e .handlebars"
+    "dev": "nodemon --exec 'tsx' ./server.ts -e .handlebars --watch ."
   },
   "dependencies": {
     "express": "^4.19.2",

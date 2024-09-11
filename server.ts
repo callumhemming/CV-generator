@@ -8,17 +8,21 @@ const port = 3000;
 
 const hbs = expressHandleBars.create({
   helpers: {
-    markdown: (options) => marked(options.fn(this).trim()),
+    markdown: function (options) {
+      const hydratedContent = options.fn(this);
+      return marked(hydratedContent);
+    },
   },
 });
 
+app.use(express.static("public"));
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 
 app.get("/", (req, res) => {
   res.render("home", {
-    name: "callum hemming",
+    myName: "callum hemming",
   });
 });
 

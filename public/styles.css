@@ -1,4 +1,171 @@
-body {
-  border: 24px black solid;
-  padding: 16px;
+:root {
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
 }
+
+.name-hero {
+  background-color: black;
+  color: white;
+  margin: -17px;
+  margin-bottom: 0;
+  padding: var(--spacing-3) var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-me-statement-container {
+  display: flex;
+}
+
+.contact-me {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1) var(--spacing-3);
+
+  & p {
+    margin-bottom: 0;
+  }
+}
+
+.text-icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  height: var(--spacing-6);
+  min-width: var(--spacing-6);
+
+  margin-right: var(--spacing-1);
+  &.email {
+    background: var(--email);
+    background-repeat: no-repeat;
+  }
+  &.github {
+    background: var(--github);
+    background-repeat: no-repeat;
+  }
+  &.linkedin {
+    background: var(--linkedin);
+    background-repeat: no-repeat;
+  }
+  &.phone {
+    background: var(--phone);
+    background-repeat: no-repeat;
+  }
+}
+
+.job {
+  letter-spacing: var(--spacing-2);
+}
+
+.date {
+  color: grey;
+
+  letter-spacing: 3px;
+  font-size: 13px;
+  p {
+    margin-bottom: 8px;
+  }
+}
+
+.line-break > hr {
+  margin: var(--spacing-4) 0;
+}
+
+ul {
+  padding: 0 0 0 var(--spacing-5);
+  margin: 0;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.skills-and-experience-container {
+  display: flex;
+  margin-bottom: var(--spacing-6);
+  & .skills {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    border-right: 1px black solid;
+    margin-right: var(--spacing-3);
+    padding-right: var(--spacing-3);
+
+    h4 {
+      margin: 0;
+      margin-bottom: var(--spacing-2);
+    }
+  }
+}
+
+main {
+  & .education,
+  & .experience {
+    width: 500px;
+  }
+}
+
+.volunteering,
+.education {
+  margin-bottom: var(--spacing-6);
+}
+
+.experience {
+  h4 {
+    margin: 0;
+  }
+  .experience-title {
+    magin: 0;
+    margin-bottom: var(--spacing-2);
+  }
+  .experience-item p {
+    break-inside: avoid;
+  }
+}
+
+/* Globals */
+header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+body {
+  padding: var(--spacing-4);
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h4 {
+  font-family: Constantia;
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+h1 {
+  font-size: 51px;
+}
+
+li > p {
+  margin: var(--spacing-1) 0;
+}
+
+/* /Globals */

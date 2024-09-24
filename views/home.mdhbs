@@ -1,0 +1,181 @@
+{{#markdown}}
+
+<header>
+
+<div class="name-hero">
+
+# {{me.name}}
+
+<span class="job">`< {{me.job}} />`</span>
+
+</div>
+
+<div class="contact-me-statement-container">
+
+<span class="statement">
+
+{{me.statement}}
+
+</span>
+
+<div class="contact-me">
+<span class="text-icon-container"><div class="icon github"></div><p>{{contact.github}}</p></span>
+<span class="text-icon-container" ><div class="icon linkedin"></div><p>{{contact.linkedin}}</p></span>
+<span class="text-icon-container" ><div class="icon phone"></div><p>{{contact.phone}}</p></span>
+<span class="text-icon-container"><div class="icon email"></div><p>{{contact.email}}</p></span>
+
+</div>
+
+</div>
+
+</header>
+
+<span class="line-break">
+
+---
+
+</span>
+
+<main>
+
+<div class="skills-and-experience-container">
+
+<div class="skills">
+
+{{#each skills}}
+
+<div class="skill-item">
+
+#### {{this.type}}
+
+{{#each this.list}}
+
+- {{this}}
+
+{{/each}}
+
+</div>
+
+{{/each}}
+
+</div>
+
+<div class="experience">
+
+<span class="experience-title">
+
+## Experience
+
+</span>
+
+<div class="experience-list">
+
+{{#each experience}}
+
+<div class="experience-item">
+
+#### {{this.title}}
+
+<span class="date">
+
+{{this.location}} | {{this.date}}
+
+</span>
+
+{{#each this.description}}
+
+{{#if this.isList }}
+
+{{#each this.data}}
+
+- {{this}}
+
+{{/each}}
+
+{{/if}}
+
+{{#unless this.isList }}
+
+{{this.data}}
+
+{{/unless}}
+
+{{/each}}
+
+</div>
+
+{{/each}}
+
+</div>
+
+</div>
+
+</div>
+
+<div class="education">
+
+## Education
+
+{{#each education}}
+<span class="date">{{this.location}} | {{this.date}}</span>
+
+{{this.title}}
+{{this.grade}}
+
+{{#each this.description}}
+
+{{#if this.isList }}
+
+{{#each this.data}}
+
+- {{this}}
+
+{{/each}}
+
+{{/if}}
+
+{{#unless this.isList }}
+
+{{this.data}}
+
+{{/unless}}
+{{/each}}
+
+{{/each}}
+
+</div>
+
+<div class="volunteering">
+
+## Volunteering
+
+{{#each volunteering}}
+
+#### {{this.title}}
+
+{{#each this.description}}
+
+{{#if this.isList }}
+
+{{#each this.data}}
+
+- {{this}}
+
+{{/each}}
+
+{{/if}}
+
+{{#unless this.isList }}
+
+{{this.data}}
+
+{{/unless}}
+{{/each}}
+
+{{/each}}
+
+</div>
+
+</main>
+
+{{/markdown}}
